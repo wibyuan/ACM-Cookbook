@@ -20,48 +20,51 @@ Every line of code in this repository follows a strict set of principles, tailor
 *   **Embedded Documentation:** Each function is preceded by a comment block detailing its purpose and time complexity in English. This prevents encoding issues and serves as a quick, reliable reference.
 *   **Learning from the Best:** The implementations are heavily inspired by, and benchmarked against, templates from proven sources like Topcoder veterans and the OI-wiki community, ensuring both efficiency and elegance.
 
+## 🚀 How to Use: The "Copy-Paste" Method
 
-## 🚀 How to Use: The "One-Copy" Method
-
-This library is designed for maximum simplicity. Each template is a self-contained unit.
+This library is designed to be used in the simplest way possible during a contest.
 
 **Step 1: Find Your Template**
 
-Navigate to the `headers/` directory and find the single file you need, for example, `MatrixMod.h`.
+Navigate to the `headers/` directory and find the template you need, for example, `MatrixMod.h`.
 
-**Step 2: Copy and Paste (Just Once!)**
+**Step 2: Copy and Paste**
 
-Open that one file, select all its content (`Ctrl+A`), copy it (`Ctrl+C`), and paste it at the top of your contest source file.
+Open the file, select all its content (`Ctrl+A`), copy it (`Ctrl+C`), and paste it at the top of your contest source file.
 
-**That's it. You are done.** You never need to worry about missing a dependency.
+**That's it!** Your code is now ready, with no external dependencies.
 
-**Example:**
+Here's a quick demonstration:
 
 ```cpp
 // Your main solution file: main.cpp
 #include <iostream>
 
-// --- Start of pasted code from DSU.h ---
+// --- Start of pasted code from MatrixMod.h ---
 #include <vector>
-#include <numeric>
-struct DSU {
-    // ... all the code from DSU.h ...
+#include <cassert>
+struct Matrix {
+    // ... all the code from MatrixMod.h ...
 };
 // --- End of pasted code ---
 
+// For templates that need it, complete the one-time setup.
+// For MatrixMod, this means setting the static MOD variable.
+long long Matrix::MOD = 1e9 + 7;
+
 void solve() {
-    // Now, the DSU struct is ready to use.
-    DSU dsu(10);
+    // Now, the Matrix struct is ready to use.
+    Matrix T(2, 2);
     // ... your logic ...
 }
 
 int main() {
-    // ...
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(NULL);
+    solve();
+    return 0;
 }
 ```
-
-This "One-Copy" guarantee is the core promise of this library, ensuring you spend your precious contest time on algorithms, not on managing code dependencies.
-
 
 ## 📚 Available Templates
 
